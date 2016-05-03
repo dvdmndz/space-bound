@@ -40,7 +40,7 @@ namespace space_bound
             this.graphics.PreferredBackBufferWidth = 800;
             this.graphics.PreferredBackBufferHeight = 480;
 
-            this.graphics.IsFullScreen = true;
+            this.graphics.IsFullScreen = false;//false para debug en consola
         }
 
         /// <summary>
@@ -84,6 +84,27 @@ namespace space_bound
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+
+
+        int movSprite=0;
+
+        private void changeSprite()
+        {
+            movSprite++;
+            if (movSprite == 1)
+            {
+                sourceRect = new Rectangle(92, 0, 83, 107);
+                Console.WriteLine("30");
+            }
+            else
+            {
+                if (movSprite == 30)
+                {
+                    sourceRect = new Rectangle(0, 0, 83, 107);
+                    Console.WriteLine("60");
+                }
+            }
+        }
         protected override void Update(GameTime gameTime)
         {
          
@@ -93,57 +114,28 @@ namespace space_bound
                 this.Exit();
 
             elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-           /* if (elapsed >= delay)
-            {
-                if (frames >= 3)
-                {
-                    frames = 0;
-                }
-                else
-                {
-                    frames++;
-                }
-                elapsed = 0;
-            }*/
+
             //mover nave
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Escape))
-            {
                 this.Exit();
-            }
-
             //DERECHA
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
-            {
                 destRect.X +=9;
-               
-            }
             //Izquierda
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left))
-            {
                 destRect.X -= 9;
-                
-            }
-            
-
             //ARRIBA
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Up))
-            {
                 destRect.Y -= 11;
-
-            }
             //ABAJO
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Down))
-            {
                 destRect.Y += 6;
-
-            }
 
             //LIMITES DE PANTALLA
             if (destRect.X > Window.ClientBounds.Width - destRect.Width)
                 destRect.X = Window.ClientBounds.Width - destRect.Width;
             if (destRect.Y > Window.ClientBounds.Height - destRect.Height)
                 destRect.Y = Window.ClientBounds.Height - destRect.Height;
-
             if (destRect.X < 0)
                 destRect.X = 0;
             if (destRect.Y < 0)
@@ -152,27 +144,27 @@ namespace space_bound
 
             //ANIMACION DE SPRITE
             //     (parte de cuadro a tomar,,,parte de cuadro a tomar,,,tamaño de cuadro,,,tamaño de cuadro)   
-     
-         //   sourceRect = new Rectangle(188, 0, 83, 107); 
+
+            //   sourceRect = new Rectangle(188, 0, 83, 107);
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left))
             {
-               
-                sourceRect = new Rectangle(92, 0, 83, 107) ;
+                changeSprite();
 
-               /* float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-                timer -= elapsed;
-                if (timer < 0)
-                {
-                    sourceRect = new Rectangle(0, 0, 83, 107);
-                    //Timer expired, execute action
-                    //timer = TIMER;   //Reset Timer
-                    
-                }
-                sourceRect = new Rectangle(0, 0, 83, 107);
-                 //release = 1;
-               */
+
+                /*float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                 timer -= elapsed;
+                 if (timer < 0)
+                 {
+                     sourceRect = new Rectangle(0, 0, 83, 107);
+                     //Timer expired, execute action
+                     //timer = TIMER;   //Reset Timer
+
+                 }
+                 */
+                //release = 1;
             }
-
+            else
+                movSprite = 0;
             //////////////////////
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
             {
