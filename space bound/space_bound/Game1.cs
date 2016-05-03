@@ -55,6 +55,7 @@ namespace space_bound
             //EN ESTE LUGAR APARECE LA NAVE 
             destRect = new Rectangle(300, 300, 83, 107);
             base.Initialize();
+            keyState = Keyboard.GetState();
         }
 
         /// <summary>
@@ -87,24 +88,42 @@ namespace space_bound
 
 
         int movSprite=0;
-
-        private void changeSprite()
+        private void changeSpriteLeft()
         {
             movSprite++;
             if (movSprite == 1)
             {
                 sourceRect = new Rectangle(92, 0, 83, 107);
-                Console.WriteLine("30");
+                Console.WriteLine("primero en " + movSprite);
             }
             else
             {
-                if (movSprite == 30)
+                if (movSprite == 31)
                 {
                     sourceRect = new Rectangle(0, 0, 83, 107);
-                    Console.WriteLine("60");
+                    Console.WriteLine("segundo en " + movSprite);
                 }
             }
         }
+
+        private void changeSpriteRight()
+        {
+            movSprite++;
+            if (movSprite == 1)
+            {
+                sourceRect = new Rectangle(284, 0, 83, 107);
+                Console.WriteLine("primero en "+movSprite);
+            }
+            else
+            {
+                if (movSprite == 31)
+                {
+                    sourceRect = new Rectangle(384, 0, 83, 107);
+                    Console.WriteLine("segundo en "+movSprite);
+                }
+            }
+        }
+        KeyboardState keyState;
         protected override void Update(GameTime gameTime)
         {
          
@@ -146,42 +165,15 @@ namespace space_bound
             //     (parte de cuadro a tomar,,,parte de cuadro a tomar,,,tamaño de cuadro,,,tamaño de cuadro)   
 
             //   sourceRect = new Rectangle(188, 0, 83, 107);
-            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left))
-            {
-                changeSprite();
 
-
-                /*float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-                 timer -= elapsed;
-                 if (timer < 0)
-                 {
-                     sourceRect = new Rectangle(0, 0, 83, 107);
-                     //Timer expired, execute action
-                     //timer = TIMER;   //Reset Timer
-
-                 }
-                 */
-                //release = 1;
-            }
-            else
-                movSprite = 0;
-            //////////////////////
-            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
-            {
-                onesecondtimer = 0;
-                onesecondtimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-                sourceRect = new Rectangle(284, 0, 83, 107);
-                
-                if (onesecondtimer > 1)
-                {
-                    sourceRect = new Rectangle(384, 0, 83, 107);
-                    //Timer expired, execute action
-                    //timer = TIMER;   //Reset Timer
-                    
-                }
-                               
-            }
+            //Sprites a la izquierda
+                if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left))
+                    changeSpriteLeft();
+                else
+                if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
+                    changeSpriteRight();
+                else
+                    movSprite = 0;
             //released
             
             if ((Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Right)&&(Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Left))))
@@ -192,8 +184,6 @@ namespace space_bound
                 
 
             }
-            
-            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
