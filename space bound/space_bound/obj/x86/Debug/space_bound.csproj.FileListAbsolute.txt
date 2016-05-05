@@ -32,3 +32,4 @@ C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\
 C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\obj\x86\Debug\space_bound.exe
 C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\obj\x86\Debug\space_bound.pdb
+C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\fondos\starfield.xnb

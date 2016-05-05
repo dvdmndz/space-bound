@@ -21,16 +21,11 @@ namespace space_bound
         Texture2D mov_nave;
         Rectangle destRect;
         Rectangle sourceRect;
-        float elapsed;
-        float elapsed2;
-        float delay = 200f;
-        int frames = 0;
-        float timer;
-        int timecounter;
-        Double seconds = 0;
-        const float TIMER = 1;
-        float onesecondtimer = 0;
-      
+        scrollingbackground sf = new scrollingbackground();
+        int fframe = 1;
+        int sframe = 15;
+
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -42,63 +37,41 @@ namespace space_bound
 
             this.graphics.IsFullScreen = false;//false para debug en consola
         }
-
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+        
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             //EN ESTE LUGAR APARECE LA NAVE 
             destRect = new Rectangle(300, 300, 83, 107);
             base.Initialize();
             keyState = Keyboard.GetState();
         }
-
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
+        
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             mov_nave = Content.Load<Texture2D>("nave");
-            // TODO: use this.Content to load your game content here
+            sf.LoadContent(Content);
 
         }
-
-        /// <summary> 
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
+        
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
         }
-
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-
+        
 
         int movSprite=0;
         private void changeSpriteLeft()
         {
             movSprite++;
-            if (movSprite == 1)
+            if (movSprite == fframe)
             {
                 sourceRect = new Rectangle(92, 0, 83, 107);
                 Console.WriteLine("primero en " + movSprite);
             }
             else
             {
-                if (movSprite == 31)
+                if (movSprite == sframe)
                 {
                     sourceRect = new Rectangle(0, 0, 83, 107);
                     Console.WriteLine("segundo en " + movSprite);
@@ -109,14 +82,14 @@ namespace space_bound
         private void changeSpriteRight()
         {
             movSprite++;
-            if (movSprite == 1)
+            if (movSprite == fframe)
             {
                 sourceRect = new Rectangle(284, 0, 83, 107);
                 Console.WriteLine("primero en "+movSprite);
             }
             else
             {
-                if (movSprite == 31)
+                if (movSprite == sframe)
                 {
                     sourceRect = new Rectangle(384, 0, 83, 107);
                     Console.WriteLine("segundo en "+movSprite);
@@ -126,14 +99,11 @@ namespace space_bound
         KeyboardState keyState;
         protected override void Update(GameTime gameTime)
         {
-         
-          
+
+            sf.Update(gameTime);
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
-            elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
             //mover nave
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Escape))
                 this.Exit();
@@ -160,48 +130,38 @@ namespace space_bound
             if (destRect.Y < 0)
                 destRect.Y = 0;
 
-
-            //ANIMACION DE SPRITE
-            //     (parte de cuadro a tomar,,,parte de cuadro a tomar,,,tamaño de cuadro,,,tamaño de cuadro)   
-
-            //   sourceRect = new Rectangle(188, 0, 83, 107);
-
-            //Sprites a la izquierda
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left) && Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
+            {
+                movSprite = 0;
+                sourceRect = new Rectangle(188, 0, 83, 107);
+            }
+            else
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left))
-                    changeSpriteLeft();
-                else
+                changeSpriteLeft();
+            else
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
-                    changeSpriteRight();
-                else
-                    movSprite = 0;
-            //released
+                changeSpriteRight();
+            else
+                movSprite = 0;
             
             if ((Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Right)&&(Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Left))))
             {
-                
                     sourceRect = new Rectangle(188, 0, 83, 107);
-
-                
-
             }
 
             base.Update(gameTime);
         }
-
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
             
-            // TODO: Add your drawing code here
             spriteBatch.Begin();
-            
+            sf.Draw(spriteBatch);
             spriteBatch.Draw(mov_nave, destRect,sourceRect, Color.White);
-            spriteBatch.End();
+            
 
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
