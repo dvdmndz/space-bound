@@ -32,7 +32,13 @@
   <ItemGroup>
     <Compile Include="nave.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="bullets.png">
+      <Name>bullets</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="fondos\starfield.jpg">
       <Name>starfield</Name>

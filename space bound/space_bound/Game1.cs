@@ -18,13 +18,14 @@ namespace space_bound
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D mov_nave;
+        Texture2D mov_nave,bulletTexture;
         Rectangle destRect;
         Rectangle sourceRect;
         scrollingbackground sf = new scrollingbackground();
         int fframe = 1;
         int sframe = 15;
-
+        float bulletDelay;
+        public List<bullets> bulletList;
 
         public Game1()
         {
@@ -32,10 +33,10 @@ namespace space_bound
             Content.RootDirectory = "Content";
 
             //full-screen
-            this.graphics.PreferredBackBufferWidth = 800;
-            this.graphics.PreferredBackBufferHeight = 480;
-
+            this.graphics.PreferredBackBufferWidth = 1280;
+            this.graphics.PreferredBackBufferHeight = 720
             this.graphics.IsFullScreen = false;//false para debug en consola
+            bulletList = new bullets();
         }
         
         protected override void Initialize()
@@ -158,7 +159,7 @@ namespace space_bound
             
             spriteBatch.Begin();
             sf.Draw(spriteBatch);
-            spriteBatch.Draw(mov_nave, destRect,sourceRect, Color.White);
+            spriteBatch.Draw(mov_nave, destRect, sourceRect, Color.White);
             
 
             spriteBatch.End();
