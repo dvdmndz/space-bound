@@ -18,14 +18,14 @@ namespace space_bound
         public Texture2D texture;
         public Vector2 origin;
         public Vector2 position;
-        public bool invisible;
+        public bool isvisible;
         public float speed;
 
         public bullets(Texture2D newTexture)
         {
             speed = 10;
             texture = newTexture;
-            invisible = false;
+            isvisible = false;
         }
 
         public void draw(SpriteBatch spriteBatch)

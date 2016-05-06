@@ -31,12 +31,12 @@ namespace space_bound
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
             //full-screen
             this.graphics.PreferredBackBufferWidth = 1280;
-            this.graphics.PreferredBackBufferHeight = 720
+            this.graphics.PreferredBackBufferHeight = 720;
             this.graphics.IsFullScreen = false;//false para debug en consola
-            bulletList = new bullets();
+            bulletList = new List<bullets>();
+            bulletDelay = 20;
         }
         
         protected override void Initialize()
@@ -44,13 +44,13 @@ namespace space_bound
             //EN ESTE LUGAR APARECE LA NAVE 
             destRect = new Rectangle(300, 300, 83, 107);
             base.Initialize();
-            keyState = Keyboard.GetState();
         }
         
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            bulletTexture = Content.Load<Texture2D>("bullets");
             mov_nave = Content.Load<Texture2D>("nave");
             sf.LoadContent(Content);
 
@@ -97,7 +97,7 @@ namespace space_bound
                 }
             }
         }
-        KeyboardState keyState;
+
         protected override void Update(GameTime gameTime)
         {
 
@@ -150,9 +150,57 @@ namespace space_bound
                     sourceRect = new Rectangle(188, 0, 83, 107);
             }
 
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Space))
+            {
+                shoot();
+            }
+            updateBullet();
+
             base.Update(gameTime);
         }
         
+        private void shoot()
+        {
+            if (bulletDelay>=0)
+            {
+                bulletDelay--;
+            }
+            if (bulletDelay <= 0) ;
+            {
+                bullets bullet = new bullets(bulletTexture);
+                bullet.position = new Vector2(destRect.X, destRect.Y);
+                bullet.isvisible = true;
+
+                if (bulletList.Count() < 30)
+                    bulletList.Add(bullet);
+            }
+            if (bulletDelay==0)
+            {
+                bulletDelay = 20;
+            }
+        }
+
+        public void updateBullet()
+        {
+            foreach(bullets b in bulletList)
+            {
+                b.position.Y = b.position.Y - b.speed;
+
+                if (b.position.Y <= 0)
+                    b.isvisible = false;
+            }
+
+            for (int i=0;i<bulletList.Count();i++)
+            {
+                if (bulletList[i].isvisible != true)
+                {
+                    bulletList.RemoveAt(i);
+                    i--;
+                }
+            }
+
+        }
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -160,7 +208,9 @@ namespace space_bound
             spriteBatch.Begin();
             sf.Draw(spriteBatch);
             spriteBatch.Draw(mov_nave, destRect, sourceRect, Color.White);
-            
+
+            foreach (bullets b in bulletList)
+                b.draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
