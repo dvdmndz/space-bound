@@ -36,7 +36,7 @@ namespace space_bound
             this.graphics.PreferredBackBufferHeight = 720;
             this.graphics.IsFullScreen = false;//false para debug en consola
             bulletList = new List<bullets>();
-            bulletDelay = 20;
+            bulletDelay = 10;
         }
         
         protected override void Initialize()
@@ -50,7 +50,7 @@ namespace space_bound
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            bulletTexture = Content.Load<Texture2D>("bullets");
+            bulletTexture = Content.Load<Texture2D>("dot");
             mov_nave = Content.Load<Texture2D>("nave");
             sf.LoadContent(Content);
 
@@ -165,18 +165,18 @@ namespace space_bound
             {
                 bulletDelay--;
             }
-            if (bulletDelay <= 0) ;
+            if (bulletDelay <= 0)
             {
                 bullets bullet = new bullets(bulletTexture);
                 bullet.position = new Vector2(destRect.X, destRect.Y);
                 bullet.isvisible = true;
 
-                if (bulletList.Count() < 30)
+                if (bulletList.Count() < 20)
                     bulletList.Add(bullet);
             }
             if (bulletDelay==0)
             {
-                bulletDelay = 20;
+                bulletDelay = 10;
             }
         }
 

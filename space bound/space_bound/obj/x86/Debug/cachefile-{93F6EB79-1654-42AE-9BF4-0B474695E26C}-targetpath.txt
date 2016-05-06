@@ -1,3 +1,4 @@
 Content\nave_0.xnb
 Content\fondos\starfield.xnb
 Content\bullets.xnb
+Content\dot.xnb

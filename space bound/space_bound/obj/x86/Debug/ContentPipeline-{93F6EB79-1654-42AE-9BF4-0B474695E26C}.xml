@@ -26,6 +26,15 @@
       <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\bullets.xnb</Output>
       <Time>2016-05-05T18:39:56.4848155-07:00</Time>
     </Item>
+    <Item>
+      <Source>dot.png</Source>
+      <Name>dot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\dot.xnb</Output>
+      <Time>2016-05-05T19:20:45.7801486-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{93F6EB79-1654-42AE-9BF4-0B474695E26C}</ContentProjectGUID>

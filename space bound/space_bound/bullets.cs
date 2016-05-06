@@ -23,7 +23,7 @@ namespace space_bound
 
         public bullets(Texture2D newTexture)
         {
-            speed = 10;
+            speed = 9   ;
             texture = newTexture;
             isvisible = false;
         }
