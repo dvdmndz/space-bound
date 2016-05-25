@@ -23,14 +23,14 @@ namespace space_bound
 
         public bullets(Texture2D newTexture)
         {
-            speed = 9   ;
+            speed = 15     ;
             texture = newTexture;
             isvisible = false;
         }
 
         public void draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.Draw(texture, position,boundBox, Color.White);
         }
 
     }
