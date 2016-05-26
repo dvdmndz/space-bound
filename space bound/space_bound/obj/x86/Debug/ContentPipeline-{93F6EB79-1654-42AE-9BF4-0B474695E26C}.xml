@@ -5,21 +5,21 @@
       <Source>nave.png</Source>
       <Importer>TextureImporter</Importer>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\nave_0.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\nave_0.xnb</Output>
       <Time>2016-05-03T09:57:16-07:00</Time>
     </Item>
     <Item>
       <Source>manolo.png</Source>
       <Importer>TextureImporter</Importer>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\manolo_0.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\manolo_0.xnb</Output>
       <Time>2016-05-25T14:15:08-07:00</Time>
     </Item>
     <Item>
       <Source>piratons.png</Source>
       <Importer>TextureImporter</Importer>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\piratons_0.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\piratons_0.xnb</Output>
       <Time>2016-05-25T14:27:44-07:00</Time>
     </Item>
     <Item>
@@ -28,7 +28,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\bullets.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\bullets.xnb</Output>
       <Time>2016-05-05T18:39:58-07:00</Time>
     </Item>
     <Item>
@@ -37,7 +37,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\fondos\starfield.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\fondos\starfield.xnb</Output>
       <Time>2016-05-03T09:57:16-07:00</Time>
     </Item>
     <Item>
@@ -46,7 +46,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\dot.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\dot.xnb</Output>
       <Time>2016-05-05T19:20:46-07:00</Time>
     </Item>
     <Item>
@@ -55,7 +55,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\pirate.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\pirate.xnb</Output>
       <Time>2016-05-25T15:08:18-07:00</Time>
     </Item>
     <Item>
@@ -64,7 +64,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\123.xnb</Output>
+      <Output>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\123.xnb</Output>
       <Time>2016-05-25T15:34:48-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -74,10 +74,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>F:\mi juebo x3.2\space-bound\space bound\space_boundContent\</RootDirectory>
-      <LoggerRootDirectory>F:\mi juebo x3.2\space-bound\space bound\space_bound\</LoggerRootDirectory>
-      <IntermediateDirectory>F:\mi juebo x3.2\space-bound\space bound\space_bound\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_boundContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

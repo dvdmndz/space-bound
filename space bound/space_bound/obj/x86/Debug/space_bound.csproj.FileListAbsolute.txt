@@ -81,3 +81,7 @@ F:\mi juebo x3.2\space-bound\space bound\space_bound\obj\x86\Debug\space_bound.e
 F:\mi juebo x3.2\space-bound\space bound\space_bound\obj\x86\Debug\space_bound.pdb
 F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\pirate.xnb
 F:\mi juebo x3.2\space-bound\space bound\space_bound\bin\x86\Debug\Content\123.xnb
+C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\manolo_0.xnb
+C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\piratons_0.xnb
+C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\pirate.xnb
+C:\Users\JesusMario\SkyDrive\Documentos\Visual Studio 2015\Projects\space-bound\space bound\space_bound\bin\x86\Debug\Content\123.xnb
